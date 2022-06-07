@@ -9,3 +9,6 @@ Overview of the Hintereisferner glacier complex. Because of significant retreats
 
 Cum_Mass_Balance_HEF_KWF.jpg
 Cumulative mass budgets of Hintereisferner and Kesselwandferner from 1949/ 50 until 2014/ 15. Geodetic Reanalysis according to Klug et al. 2017 was applied from 2001-2011. The diagram shows retreating glaciers besides a short period of advances or stagnation in the 1980s and 1990s. Source: Kaser & Juen 2018.
+
+Spectral_Properties_Ice_Snow
+Spectral Properties of firn, ice, and snow. Reflectance (y-Axis) of different surfaces at different wavelengths (x-Axis). Additionally, the spectrum covered by the Landsat Thematic Mapper (TM) is displayed Though Sentinel 2 is used in this case study, it can be compared to the spectrum of Landsat. For remote sensing, the spectral properties of surfaces are fundamental. The colored bars mark important spectrums in the visible light (VIS) and Near Infrared (NIR). While Aged Snow (Firn) and Glacier ice are hard to separate in the VIS spectrum, sensing in NIR is very suitable for distinguishing snow, firn, and ice. Source: Dietz et al. 2012, modified.
