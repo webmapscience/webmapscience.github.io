@@ -1,0 +1,11 @@
+Webcam_Foto_HEF.jpg
+Photo of Hintereisferner in a south-western direction. The Picture shows the accumulation area of Hintereisferner with the two highest peaks Weißkugel (left) and Langtaufererspitze (right) and large parts of the glacier tongue. The photo is taken by a webcam, that is installed at the Container of the TLS. On the shown date of 09/03/2019, most of the glacier is bare ice, only in higher elevation, ice is covered by firn which is typical for late summer. Source: www.foto-webcam.eu
+
+Climate HEF
+Climate Diagram displaying data recorded in Vent and Hintereisferner. The black line shows the average air temperature from May to September in Vent. The red bars show the precipitation sum during the accumulation season (October to April). The same data is displayed for Hintereisferner in blue bars. Due to the higher elevation, precipitation at Hintereisferner is about double as high compared to Vent. Source: Fischer & Hartl 2013: 39.
+
+Untersuchungsgebiet
+Overview of the Hintereisferner glacier complex. Because of significant retreats in the last decades, Hintereisferner now technically consists of three different parts as shown on the map. The three parts of the glacier complex are treated as one glacier in the case study. Data: ESA (Sentinel 2 TCI), Klug 2019 (Glacier boundaries), data.gv.at (administrative boundaries of Tyrol and rivers). Own cartography.
+
+Cum_Mass_Balance_HEF_KWF.jpg
+Cumulative mass budgets of Hintereisferner and Kesselwandferner from 1949/ 50 until 2014/ 15. Geodetic Reanalysis according to Klug et al. 2017 was applied from 2001-2011. The diagram shows retreating glaciers besides a short period of advances or stagnation in the 1980s and 1990s. Source: Kaser & Juen 2018.
