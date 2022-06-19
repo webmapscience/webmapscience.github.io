@@ -76,32 +76,33 @@ overlays.gpx.addTo(map);
 
 // GPX Track Layer implementieren
 let gpxTrack = new L.GPX("", {
-async: true,
-marker_options:{
-    startIconUrl:'icons/start.png',
-    endIconUrl:'icons/mountain.png',
-    shadowUrl: null,
-    iconSize: [32, 37],
-    iconAnchor: [16, 37],
-},
-polyline_options:{
-    color:"black",
-    dashArray:[5,4],
-}
+    async: true,
+    marker_options: {
+        startIconUrl: 'icons/start.png',
+        endIconUrl: 'icons/mountain.png',
+        shadowUrl: null,
+        iconSize: [32, 37],
+        iconAnchor: [16, 37],
+    },
+    polyline_options: {
+        color: "black",
+        dashArray: [5, 4],
+    }
 
 }).addTo(overlays.gpx);
 
-gpxTrack.on("loaded", function (evt){
+gpxTrack.on("loaded", function (evt) {
     //console.log ("loaded gpx event: ", evt);
     map.fitBounds(evt.target.getBounds())
 
 
-let gpxLayer = evt.target;
-map.fitBounds(gpxLayer.getBounds());
+    let gpxLayer = evt.target;
+    map.fitBounds(gpxLayer.getBounds());
 
-let popup = `
+    let popup = `
 <h3> ${gpxLayer.get_name()}</h3>
 <ul>
+<img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" style="width:170px; border:2px solid silver;" alt="Webcam">
     <li>Streckenlänge ${gpxLayer.get_distance()/1000} m </li>
     <li>Höchster Punkt: ${gpxLayer.get_elevation_max()} m</li>
     <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min()} m</li>
@@ -110,18 +111,18 @@ let popup = `
 
 </ul>
 `;
-gpxLayer.bindPopup(popup);
+    gpxLayer.bindPopup(popup);
 });
 
 let elevationControl = L.control.elevation({
-    time:false,
-    theme:'bike-tirol',
+    time: false,
+    theme: 'bike-tirol',
     elevationDIV: "#profile",
     height: 200
 
 }).addTo(map);
 
-gpxTrack.on("addline", function(evt) {
+gpxTrack.on("addline", function (evt) {
 
     elevationControl.addData(evt.line);
-}); 
+});
