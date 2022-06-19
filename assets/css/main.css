@@ -37,7 +37,6 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -61,6 +60,12 @@ nav,
 section,
 summary {
     display: block
+}
+
+.center {
+    display: block;
+    justify-content: center;
+    
 }
 
 audio,
