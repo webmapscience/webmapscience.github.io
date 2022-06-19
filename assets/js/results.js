@@ -59,10 +59,9 @@ layerControl.expand();
 async function loadBoarders(url) {
     let response = await fetch(url);
     let geojson = await response.json();
-    console.log('Geojson borders: ', geojson);
     L.geoJSON(geojson).addTo(map)
 }
-loadBoarders("data/aoi.geojson");
+loadBoarders("data/aoi_wgs84.geojson");
 
 // let testlayer = L.tileLayer('tiles/Mapnik/{z}/{x}/{y}.png', {
 //     minZoom: 14,
