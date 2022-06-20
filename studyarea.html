@@ -11,27 +11,21 @@
 
   <!-- eigene Scripte -->
   <link rel="stylesheet" href="assets/css/main.css">
-  <script defer src="assets/js/t.js"></script>
-
-
-  
+ 
       <!-- Font awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-      <!-- Leaflet -->
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin="" />
-      <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-          integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-          crossorigin=""></script>
-  
-      <!-- Leaflet providers plugin -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
-          integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+
+    <!-- Leaflet providers plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
+      integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
       <!-- Leaflet fullscreen plugin -->
       <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
@@ -51,7 +45,7 @@
   </head>
   
   <body >
-    <main class="center">
+
           <header>
               <div>
                   <h2><i class="fa-solid fa-mountain"></i> How to get to Hintereisferner</h2>
@@ -65,25 +59,17 @@
               <p></p>
   
               <div id="map"></div>
-              
+              <script src="assets/js/example.js"></script>
+
+  
               <div id="profile"></div>
   
               <h3>Streckenbeschreibung</h3>
               <p></p>
           </article>
-          <footer>
-              <strong>Quellen:</strong>
-              <nav>
-                  <a
-                      href="">
-                      OSM</a>
-              </nav>
-          </footer>
-      </main>
+    
+
   
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<!--<script src="assets/js/functions-min.js"></script> -->
 </body>
 </html>
