@@ -3,7 +3,7 @@
 let hintereisferner = {
     lat: 47.267222,
     lng: 11.392778,
-    zoom: 9
+    zoom: 13
 };
 
 // WMTS Hintergrundlayer der eGrundkarte Tirol definieren
@@ -69,6 +69,14 @@ L.control.scale({
 
 // Fullscreen control
 L.control.fullscreen().addTo(map);
+
+
+// Mini-Map
+let miniMap = new L.Control.MiniMap(
+    L.tileLayer.provider("BasemapAT"), {
+        toggleDisplay: true
+    }
+).addTo(map);
 
 // GPX Track Layer beim Laden anzeigen
 overlays.gpx.addTo(map);
