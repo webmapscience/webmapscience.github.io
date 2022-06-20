@@ -109,22 +109,23 @@ let gpxLayer = evt.target;
 map.fitBounds(gpxLayer.getBounds());
 
 let popup = `
-<h1> Aussichtsstandort mit aktuellem Webcam-Foto </h1>
+<h1> Aussichtsstandort mit aktuellem Webcam-Foto am Zielort: </h1>
 <ul>
 <img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" href="https://www.foto-webcam.eu/webcam/hintereisferner1/" style="width:170px; border:2px solid silver;" alt="Webcam">
     <h3> Trekkingroute Hard-Facts: </h3>
-    <li>Streckenlänge ${gpxLayer.get_distance()/1000} m </li>
-    <li>Höchster Punkt: ${gpxLayer.get_elevation_max()} m</li>
-    <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min()} m</li>
-    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} m</li>
-    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} m</li>
+    <li>Streckenlänge ${gpxLayer.get_distance().toFixed()/1000} Kilometer </li>
+    <li>Höchster Punkt: ${gpxLayer.get_elevation_max().toFixed()} m. ü. NN.</li>
+    <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min().toFixed()} m. ü. NN.</li>
+    <br>
+    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter Bergauf</li>
+    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter Bergab</li>
 
 </ul>
 `;
 
 // Rainviewer
 L.control.rainviewer({
-    position: 'bottomleft',
+    position: 'topleft',
     nextButtonText: '>',
     playStopButtonText: 'Play/Stop',
     prevButtonText: '<',
