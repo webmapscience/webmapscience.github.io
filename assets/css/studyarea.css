@@ -1,0 +1,75 @@
+/* Stile für das Bike Trail Tirol Beispiel */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: black;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    max-height: 50px;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header nav {
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-top: 1em;
+}
+
+article {
+    margin-top: 0.5em;
+    border-top: 1px solid black;
+}
+
+article h1,
+article h3 {
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+}
+
+article p {
+    text-align: justify;
+}
+
+article #map {
+    width: 100%;
+    height: 600px;
+    border: 1px solid gray;
+}
+
+footer {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    border-top: 1px solid black;
+    padding: 1em 0em 3em 0em;
+}
+
+footer nav {
+    display: inline-block;
+}
+
+#profile {
+    border: 1px solid gray;
+    margin-top: 0.5em;
+}
+
+.bike-tirol{
+    --ele-area: seagreen;
+    --ele-bg: white;
+}
