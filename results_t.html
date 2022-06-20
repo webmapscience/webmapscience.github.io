@@ -12,32 +12,47 @@
     <meta name="keywords" content="glacier, template, html, sass, jquery">
     <meta name="author" content="Wagner Franz und Sußbauer Robert">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-      crossorigin="" />
-
-    <!-- Plugins -->
+  
+  <!-- eigene Scripte -->
+  <!-- <link rel="stylesheet" href="assets/css/main.css"> -->
+ 
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
     <!-- Leaflet -->
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-      crossorigin=""></script>
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
 
     <!-- Leaflet providers plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
-      integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
-    <!-- Ajax Plugin -->
-    <script src="assets\js\vendor\leaflet.ajax.min.js"></script>
+    integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+    <!-- Leaflet fullscreen plugin -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+    rel='stylesheet' />
+
+    <!--Leaflet gpx-Plugins hinzu-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"
+    integrity="sha512-BsUtn1Ar2O78Q8YkY1f2pkioHOs8H43KUlP3PHus8lyAMODNq1CmemnU435dFk/SU37OGG+ooxvmEhAcNTEBFQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  
+    <!-- leaflet-elevation -->
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
+    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
+  
 
 
   </head>
 
 <body>
   <div id="map"></div>
-  <script src="assets\js\results.js"></script>
+  <script src="assets\js\main.js"></script>
 </body>
 
 </html>
