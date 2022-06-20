@@ -56,12 +56,27 @@ let layerControl = L.control.layers({
 
 layerControl.expand();
 
-async function loadBoarders(url) {
+async function loadPoly(url) {
     let response = await fetch(url);
     let geojson = await response.json();
-    L.geoJSON(geojson).addTo(map)
+    L.geoJSON(geojson).addTo(map);
+
+    L.geoJSON(geojson, {
+        style: function (feature) {
+            // Farben von clrs.cc
+            let colors = {
+                0:"#001f3f",
+                1:"#0074D9",
+                2:"00FFFFFF",
+            };
+
+            return{
+                color: `${colors[feature.properties.GRIDCODE]}`
+            }
+        }
+    })
 }
-loadBoarders("data/aoi_wgs84.geojson");
+loadPoly("data/prediction_RF.geojson");
 
 // let testlayer = L.tileLayer('tiles/Mapnik/{z}/{x}/{y}.png', {
 //     minZoom: 14,
