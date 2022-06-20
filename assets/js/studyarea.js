@@ -32,7 +32,7 @@ const eGrundkarteTirol = {
 }
 
 // eGrundkarte Tirol Sommer als Startlayer
-let startLayer = eGrundkarteTirol.sommer;
+let startLayer = eGrundkarteTirol.ortho;
 
 // Overlays Objekt für den GPX Track Layer
 let overlays = {
@@ -54,6 +54,8 @@ let layerControl = L.control.layers({
     "Sommer": startLayer,
     "Winter": eGrundkarteTirol.winter,
     "Orthofoto": eGrundkarteTirol.ortho,
+    "Oberfächenmodel": L.tileLayer.provider("BasemapAT.surface"),
+    "Geländemodel": L.tileLayer.provider("BasemapAT.terrain"),
     "Orthofoto mit Beschriftung": L.layerGroup([
         eGrundkarteTirol.ortho,
         eGrundkarteTirol.nomenklatur,
@@ -140,11 +142,13 @@ gpxLayer.bindPopup(popup);
 
 let elevationControl = L.control.elevation({
     time:false,
-    theme:'bike-tirol',
+    theme:"lightblue-theme",
     elevationDIV: "#profile",
     height: 200
 
 }).addTo(map);
+
+
 
 gpxTrack.on("addline", function(evt) {
 
