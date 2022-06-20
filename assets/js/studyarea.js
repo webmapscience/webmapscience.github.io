@@ -131,19 +131,6 @@ let popup = `
 L.control.bigImage({position: 'bottomleft'}).addTo(map);
 
 
-//Routing
-L.leafletControlRoutingtoaddress({
-    position: 'bottomleft',
-    router: 'osrm',
-    token: '',
-    placeholder: 'Please insert your address here.',
-    errormessage: 'Address not valid.',
-    distance: 'Entfernung:',
-    duration: 'Fahrzeit',
-    target: 'Koblenz, Rheinland-Pfalz, Deutschland',
-    requesterror: '"Too Many Requests" or "Not Authorized - Invalid Token"'
-
-}).addTo(mymap);
 
 // Rainviewer
 L.control.rainviewer({
