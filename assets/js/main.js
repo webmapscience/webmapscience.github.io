@@ -67,7 +67,7 @@ L.control.scale({
     imperial: false
 }).addTo(map);
 
-layerControl.expand();
+
 
 
 // Fullscreen control
