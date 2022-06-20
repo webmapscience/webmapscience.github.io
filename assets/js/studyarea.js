@@ -51,10 +51,10 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "eGrundkarte Tirol Sommer": startLayer,
-    "eGrundkarte Tirol Winter": eGrundkarteTirol.winter,
-    "eGrundkarte Tirol Orthofoto": eGrundkarteTirol.ortho,
-    "eGrundkarte Tirol Orthofoto mit Beschriftung": L.layerGroup([
+    "Sommer": startLayer,
+    "Winter": eGrundkarteTirol.winter,
+    "Orthofoto": eGrundkarteTirol.ortho,
+    "Orthofoto mit Beschriftung": L.layerGroup([
         eGrundkarteTirol.ortho,
         eGrundkarteTirol.nomenklatur,
     ])
@@ -109,9 +109,10 @@ let gpxLayer = evt.target;
 map.fitBounds(gpxLayer.getBounds());
 
 let popup = `
-<h3> ${gpxLayer.get_name()}</h3>
+<h1> Aussichtsstandort mit aktuellem Webcam-Foto </h1>
 <ul>
-<img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" style="width:170px; border:2px solid silver;" alt="Webcam">
+<img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" href="https://www.foto-webcam.eu/webcam/hintereisferner1/" style="width:170px; border:2px solid silver;" alt="Webcam">
+    <h3> Trekkingroute Hard-Facts: </h3>
     <li>Streckenlänge ${gpxLayer.get_distance()/1000} m </li>
     <li>Höchster Punkt: ${gpxLayer.get_elevation_max()} m</li>
     <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min()} m</li>
