@@ -69,7 +69,40 @@ footer nav {
     margin-top: 0.5em;
 }
 
-.bike-tirol{
-    --ele-area: seagreen;
+.trekking{
+    --ele-area: rgb(46, 48, 139);
     --ele-bg: white;
 }
+
+.custom-theme.elevation-control .area path.altitude,
+		.custom-theme .legend-altitude rect.area {
+			fill: rgba(255, 255, 255, 0.85);  /* fallback color */
+			fill: url(#herringbone-pattern);    /* svg pattern (optional) */
+			fill-opacity: 0.8;
+			stroke: #F00;
+			stroke-width: 1.5;
+		}
+
+		.custom-theme.elevation-control .area path.slope,
+		.custom-theme .legend-slope rect {
+			fill: url(#blob-pattern);
+			fill-opacity: 1;
+			stroke: #000;
+			stroke-width: 1.5;
+		}
+
+		.custom-theme.height-focus.circle-lower {
+			fill: #FF0;
+		}
+
+		.custom-theme.elevation-polyline {
+			stroke: #F00;
+			stroke-opacity: 1;
+			stroke-width: 2;
+		}
+
+		.custom-theme.elevation-polyline-segments {
+			stroke: #FF0;
+			stroke-width: 2;
+			stroke-dasharray: 4;
+		}

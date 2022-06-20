@@ -110,6 +110,8 @@ gpxTrack.on("loaded", function (evt){
 let gpxLayer = evt.target;
 map.fitBounds(gpxLayer.getBounds());
 
+
+
 let popup = `
 <h1> Aussichtsstandort mit aktuellem Webcam-Foto am Zielort: </h1>
 <ul>
@@ -124,6 +126,9 @@ let popup = `
 
 </ul>
 `;
+
+L.control.bigImage({position: 'bottomleft'}).addTo(map);
+
 
 // Rainviewer
 L.control.rainviewer({
@@ -142,7 +147,7 @@ gpxLayer.bindPopup(popup);
 
 let elevationControl = L.control.elevation({
     time:false,
-    theme:"lightblue-theme",
+    theme: "trekking",
     elevationDIV: "#profile",
     height: 200
 
