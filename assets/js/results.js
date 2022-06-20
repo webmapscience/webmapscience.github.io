@@ -60,22 +60,21 @@ async function loadPoly(url) {
     let response = await fetch(url);
     let geojson = await response.json();
     L.geoJSON(geojson).addTo(map);
+
     L.geoJSON(geojson, {
         style: function (feature) {
             // Farben von clrs.cc
-            //console.log(feature.properties.gridcode)
             let colors = {
-                0: "#001f3f",
-                1: "#0074D9",
-                2: "00FFFFFF",
+                0:"#001f3f",
+                1:"#0074D9",
+                2:"00FFFFFF",
             };
 
-            return {
-                color: `${colors[feature.properties.gridcode]}`
+            return{
+                color: `${colors[feature.properties.GRIDCODE]}`
             }
         }
-    });
-
+    })
 }
 loadPoly("data/prediction_RF.geojson");
 
