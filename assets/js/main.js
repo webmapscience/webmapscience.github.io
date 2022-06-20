@@ -32,7 +32,7 @@ const eGrundkarteTirol = {
 }
 
 // orthophoto als Startlayer
-let startLayer = eGrundkarteTirol.ortho;
+let startLayer = eGrundkarteTirol.sommer;
 
 // Overlays Objekt für den GPX Track Layer
 let overlays = {
