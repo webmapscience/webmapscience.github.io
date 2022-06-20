@@ -64,6 +64,7 @@ async function loadPoly(url) {
     L.geoJSON(geojson, {
         style: function (feature) {
             // Farben von clrs.cc
+            console.log(feature.properties.GRIDCODE)
             let colors = {
                 0:"#001f3f",
                 1:"#0074D9",
