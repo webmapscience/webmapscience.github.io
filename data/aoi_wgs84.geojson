@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "aoi_wgs84",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Shape_Leng": 16434.979011399999, "Shape_Area": 16331854.655500002 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 10.727795255971913, 46.815329687984161 ], [ 10.791342377329679, 46.814293100775139 ], [ 10.790277195114724, 46.784007427212295 ], [ 10.726765683394172, 46.785042953773839 ], [ 10.727795255971913, 46.815329687984161 ] ] ] ] } }
+]
+}
