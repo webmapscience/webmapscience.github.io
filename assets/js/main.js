@@ -1,7 +1,7 @@
 let hintereisferner = {
     lat: 46.7956981,
     lng: 10.7411067,
-    zoom: 13
+    zoom: 15
 };
 
 
@@ -51,9 +51,9 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "eGrundkarte Tirol Sommer": startLayer,
+    "eGrundkarte Tirol Orthophoto": startLayer,
     "eGrundkarte Tirol Winter": eGrundkarteTirol.winter,
-    "eGrundkarte Tirol Orthofoto": eGrundkarteTirol.ortho,
+    "eGrundkarte Tirol Sommer": eGrundkarteTirol.sommer,
     "eGrundkarte Tirol Orthofoto mit Beschriftung": L.layerGroup([
         eGrundkarteTirol.ortho,
         eGrundkarteTirol.nomenklatur,
@@ -66,6 +66,9 @@ let layerControl = L.control.layers({
 L.control.scale({
     imperial: false
 }).addTo(map);
+
+layerControl.expand();
+
 
 // Fullscreen control
 L.control.fullscreen().addTo(map);
