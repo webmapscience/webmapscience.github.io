@@ -1,9 +1,9 @@
 /* Bike Trail Tirol Beispiel */
 
 let hintereisferner = {
-    lat: 47.267222,
-    lng: 11.392778,
-    zoom: 13
+    lat: 46.7956981,
+    lng: 10.7411067,
+    zoom: 15
 };
 
 // WMTS Hintergrundlayer der eGrundkarte Tirol definieren
@@ -86,7 +86,7 @@ overlays.gpx.addTo(map);
 
 
 // GPX Track Layer implementieren
-let gpxTrack = new L.GPX("../data/route_1.gpx", {
+let gpxTrack = new L.GPX("./data/route_1.gpx", {
 async: true,
 marker_options:{
     startIconUrl:'icons/start.png',
