@@ -1,9 +1,9 @@
 /* Bike Trail Tirol Beispiel */
 
 let hintereisferner = {
-    lat: 47.267222,
-    lng: 11.392778,
-    zoom: 13
+    lat: 46.7956981,
+    lng: 10.7411067,
+    zoom: 15
 };
 
 // WMTS Hintergrundlayer der eGrundkarte Tirol definieren
@@ -32,7 +32,7 @@ const eGrundkarteTirol = {
 }
 
 // eGrundkarte Tirol Sommer als Startlayer
-let startLayer = eGrundkarteTirol.sommer;
+let startLayer = eGrundkarteTirol.ortho;
 
 // Overlays Objekt für den GPX Track Layer
 let overlays = {
@@ -51,10 +51,12 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "eGrundkarte Tirol Sommer": startLayer,
-    "eGrundkarte Tirol Winter": eGrundkarteTirol.winter,
-    "eGrundkarte Tirol Orthofoto": eGrundkarteTirol.ortho,
-    "eGrundkarte Tirol Orthofoto mit Beschriftung": L.layerGroup([
+    "Sommer": startLayer,
+    "Winter": eGrundkarteTirol.winter,
+    "Orthofoto": eGrundkarteTirol.ortho,
+    "Oberfächenmodel": L.tileLayer.provider("BasemapAT.surface"),
+    "Geländemodel": L.tileLayer.provider("BasemapAT.terrain"),
+    "Orthofoto mit Beschriftung": L.layerGroup([
         eGrundkarteTirol.ortho,
         eGrundkarteTirol.nomenklatur,
     ])
@@ -84,7 +86,7 @@ overlays.gpx.addTo(map);
 
 
 // GPX Track Layer implementieren
-let gpxTrack = new L.GPX("../data/route_1.gpx", {
+let gpxTrack = new L.GPX("./data/route_1.gpx", {
 async: true,
 marker_options:{
     startIconUrl:'icons/start.png',
@@ -108,28 +110,52 @@ gpxTrack.on("loaded", function (evt){
 let gpxLayer = evt.target;
 map.fitBounds(gpxLayer.getBounds());
 
+
+
 let popup = `
-<h3> ${gpxLayer.get_name()}</h3>
+<h1> Aussichtsstandort mit aktuellem Webcam-Foto am Zielort: </h1>
 <ul>
-<img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" style="width:170px; border:2px solid silver;" alt="Webcam">
-    <li>Streckenlänge ${gpxLayer.get_distance()/1000} m </li>
-    <li>Höchster Punkt: ${gpxLayer.get_elevation_max()} m</li>
-    <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min()} m</li>
-    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} m</li>
-    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} m</li>
+<img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" href="https://www.foto-webcam.eu/webcam/hintereisferner1/" style="width:170px; border:2px solid silver;" alt="Webcam">
+    <h3> Trekkingroute Hard-Facts: </h3>
+    <li>Streckenlänge ${gpxLayer.get_distance().toFixed()/1000} Kilometer </li>
+    <li>Höchster Punkt: ${gpxLayer.get_elevation_max().toFixed()} m. ü. NN.</li>
+    <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min().toFixed()} m. ü. NN.</li>
+    <br>
+    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter Bergauf</li>
+    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter Bergab</li>
 
 </ul>
 `;
+
+// Print
+L.control.bigImage({position: 'bottomleft'}).addTo(map);
+
+
+
+// Rainviewer
+L.control.rainviewer({
+    position: 'topleft',
+    nextButtonText: '>',
+    playStopButtonText: 'Play/Stop',
+    prevButtonText: '<',
+    positionSliderLabelText: "Hour:",
+    opacitySliderLabelText: "Opacity:",
+    animationInterval: 500,
+    opacity: 0.5
+}).addTo(map);
+
 gpxLayer.bindPopup(popup);
 });
 
 let elevationControl = L.control.elevation({
     time:false,
-    theme:'bike-tirol',
+    theme: "trekking",
     elevationDIV: "#profile",
     height: 200
 
 }).addTo(map);
+
+
 
 gpxTrack.on("addline", function(evt) {
 
