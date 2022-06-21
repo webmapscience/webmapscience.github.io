@@ -65,7 +65,7 @@ L.control.fullscreen().addTo(map);
 async function loadPoly(url) {
     let response = await fetch(url);
     let geojson = await response.json();
-    console.log(geojson.properties.GRIDCODE);
+    //console.log(geojson.properties.GRIDCODE); <´- Hier ist der Fehler!1 (properties können nicht ausgelesen werden)
 
     L.geoJSON(geojson, {
         style: function(geojson) {
