@@ -1,6 +1,6 @@
 let hintereisferner = {
-    lat: 46.7956981,
-    lng: 10.7411067,
+    lat: 46.79836,
+    lng: 10.76857,
     zoom: 14
 };
 
@@ -43,7 +43,7 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "Sommer": startLayer,
+    "Sommer": eGrundkarteTirol.sommer,
     "Winter": eGrundkarteTirol.winter,
     "Orthofoto": eGrundkarteTirol.ortho,
     "Oberfächenmodel": L.tileLayer.provider("BasemapAT.surface"),
@@ -67,6 +67,11 @@ async function loadPoly(url) {
     let response = await fetch(url);
     let geojson = await response.json();
 
+    // Add to overlay
+    let overlay = L.featureGroup();
+    layerControl.addOverlay(overlay, "Gletscherstand 2017");
+    overlay.addTo(map);
+
     L.geoJSON(geojson, {
         style: function(feature) {
             console.log(feature.properties.gridcode);
@@ -75,6 +80,8 @@ async function loadPoly(url) {
                 case 1: return {color: "#0074D9"};
             }
         }
-    }).addTo(map);
+    }).addTo(overlay);
 }
 loadPoly("data/prediction_RF_01.geojson");
+
+// TODO: Legende
