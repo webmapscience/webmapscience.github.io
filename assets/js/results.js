@@ -63,13 +63,13 @@ L.control.scale({
 L.control.fullscreen().addTo(map);
 
 // Load Classified geojason data and style by property gridcode = class label
-async function loadPoly(url) {
+async function loadPoly(url, name) {
     let response = await fetch(url);
     let geojson = await response.json();
 
     // Add to overlay
     let overlay = L.featureGroup();
-    layerControl.addOverlay(overlay, "Gletscherstand 2017");
+    layerControl.addOverlay(overlay, name);
     overlay.addTo(map);
 
     L.geoJSON(geojson, {
@@ -82,6 +82,9 @@ async function loadPoly(url) {
         }
     }).addTo(overlay);
 }
-loadPoly("data/prediction_RF_01.geojson");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2016");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2017");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2018");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2019");
 
 // TODO: Legende
