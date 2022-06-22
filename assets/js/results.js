@@ -62,14 +62,15 @@ L.control.scale({
 // Fullscreen control
 L.control.fullscreen().addTo(map);
 
+// Load Classified geojason data and style by property gridcode = class label
 async function loadPoly(url) {
     let response = await fetch(url);
     let geojson = await response.json();
-    //console.log(geojson.properties.GRIDCODE); <´- Hier ist der Fehler!1 (properties können nicht ausgelesen werden)
 
     L.geoJSON(geojson, {
-        style: function(geojson) {
-            switch (geojson.properties.GRIDCODE) {
+        style: function(feature) {
+            console.log(feature.properties.gridcode);
+            switch (feature.properties.gridcode) {
                 case 0: return {color: "#001f3f"};
                 case 1: return {color: "#0074D9"};
             }
