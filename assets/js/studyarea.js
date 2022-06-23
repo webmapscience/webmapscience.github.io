@@ -64,6 +64,17 @@ let layerControl = L.control.layers({
     "GPX Track der Etappe": overlays.gpx,
 }).addTo(map);
 
+/*L.LayerGroup.EnvironmentalLayers({
+    // simpleLayerControl: true,
+    addLayersToMap: true,
+    include: ['odorreport', 'clouds', 'eonetFiresLayer', 'Unearthing', 'PLpeople'], // display only these layers
+    // exclude: ['mapknitter', 'clouds'], // layers to exclude (cannot be used at same time as 'include'
+    // display: ['eonetFiresLayer'], // which layers are actually shown as opposed to just being in the menu
+    hash: true,
+    embed: true,
+    // hostname: 'domain name goes here'
+  }).addTo(map);*/
+
 // Maßstab control
 L.control.scale({
     imperial: false
@@ -82,8 +93,6 @@ let miniMap = new L.Control.MiniMap(
 
 // GPX Track Layer beim Laden anzeigen
 overlays.gpx.addTo(map);
-
-
 
 // GPX Track Layer implementieren
 let gpxTrack = new L.GPX("./data/route_1.gpx", {
