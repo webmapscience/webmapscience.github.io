@@ -1,6 +1,6 @@
 let hintereisferner = {
-    lat: 46.7956981,
-    lng: 10.7411067,
+    lat: 46.79836,
+    lng: 10.76857,
     zoom: 14
 };
 
@@ -43,7 +43,7 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "Sommer": startLayer,
+    "Sommer": eGrundkarteTirol.sommer,
     "Winter": eGrundkarteTirol.winter,
     "Orthofoto": eGrundkarteTirol.ortho,
     "Oberfächenmodel": L.tileLayer.provider("BasemapAT.surface"),
@@ -62,18 +62,42 @@ L.control.scale({
 // Fullscreen control
 L.control.fullscreen().addTo(map);
 
-async function loadPoly(url) {
+// Load Classified geojason data and style by property gridcode = class label
+async function loadPoly(url, name) {
     let response = await fetch(url);
     let geojson = await response.json();
-    //console.log(geojson.properties.GRIDCODE); <´- Hier ist der Fehler!1 (properties können nicht ausgelesen werden)
+
+    // Add to overlay
+    let overlay = L.featureGroup();
+    layerControl.addOverlay(overlay, name);
+    overlay.addTo(map);
 
     L.geoJSON(geojson, {
-        style: function(geojson) {
-            switch (geojson.properties.GRIDCODE) {
+        style: function(feature) {
+            console.log(feature.properties.gridcode);
+            switch (feature.properties.gridcode) {
                 case 0: return {color: "#001f3f"};
                 case 1: return {color: "#0074D9"};
             }
         }
-    }).addTo(map);
+    }).addTo(overlay);
 }
-loadPoly("data/prediction_RF_01.geojson");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2016");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2017");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2018");
+loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2019");
+
+// TODO: Legende
+var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Ice</span><br>';
+  div.innerHTML += '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Snow</span><br>';
+
+  
+
+  return div;
+};
+
+legend.addTo(map);
