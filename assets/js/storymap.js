@@ -24,7 +24,7 @@
 
 
         if (typeof(L) === 'undefined') {
-            throw new Error('Storymap requires Laeaflet');
+            throw new Error('Storymap requires Leaflet');
         }
         if (typeof(_) === 'undefined') {
             throw new Error('Storymap requires underscore.js');
