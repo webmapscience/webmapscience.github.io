@@ -41,7 +41,7 @@ article {
 
 article h1,
 article h3 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Adelle", "Roboto", sans-serif;
     font-style: italic;
 }
 
@@ -56,7 +56,7 @@ article #map {
 }
 
 footer {
-    font-family: "Roboto", sans-serif;
+    font-family: "Adelle", "Roboto", sans-serif;
     font-size: 0.9em;
     margin-top: 0.5em;
     border-top: 1px solid black;
@@ -68,12 +68,12 @@ footer nav {
 }
 
 #profile {
-    border: 1px solid gray;
-    margin-top: 0.5em;
+    border: 0px solid gray;
+    margin-top: 5.5em;
 }
 
 .trekking{
-    --ele-area: rgb(46, 48, 139);
+    --ele-area: white;
     --ele-bg: white;
 }
 
@@ -81,7 +81,7 @@ footer nav {
 		.custom-theme .legend-altitude rect.area {
 			fill: rgba(255, 255, 255, 0.85);  /* fallback color */
 			fill: url(#herringbone-pattern);    /* svg pattern (optional) */
-			fill-opacity: 0.8;
+			fill-opacity: 0.1;
 			stroke: #F00;
 			stroke-width: 1.5;
 		}
@@ -113,16 +113,17 @@ footer nav {
 /*Legend specific*/
 .legend {
     padding: 6px 8px;
-    font: 14px Arial, Helvetica, sans-serif;
+    font: 14px "Adelle", Arial, Helvetica, sans-serif;
     background: white;
     background: rgba(255, 255, 255, 0.8);
-    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     /*border-radius: 5px;*/
     line-height: 24px;
-    color: #555;
+    color: rgb(110, 8, 8);
   }
   .legend h4 {
     text-align: center;
+    font: "Adelle";
     font-size: 16px;
     margin: 2px 12px 8px;
     color: #777;
@@ -131,6 +132,7 @@ footer nav {
   .legend span {
     position: relative;
     bottom: 3px;
+    
   }
   
   .legend i {
@@ -139,10 +141,12 @@ footer nav {
     float: left;
     margin: 0 8px 0 0;
     opacity: 0.7;
+    font: "Adelle";
   }
   
   .legend i.icon {
     background-size: 18px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(255, 255, 255);
+    
   }
   

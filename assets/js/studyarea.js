@@ -75,7 +75,7 @@ let layerControl = L.control.layers({
     // hostname: 'domain name goes here'
   }).addTo(map);*/
 
-// Maßstab control
+// Maßstab hinzu
 L.control.scale({
     imperial: false
 }).addTo(map);
@@ -130,8 +130,8 @@ let popup = `
     <li>Höchster Punkt: ${gpxLayer.get_elevation_max().toFixed()} m. ü. NN.</li>
     <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min().toFixed()} m. ü. NN.</li>
     <br>
-    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter Bergauf</li>
-    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter Bergab</li>
+    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter </li>
+    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter </li>
 
 </ul>
 `;
@@ -160,7 +160,10 @@ let elevationControl = L.control.elevation({
     time:false,
     theme: "trekking",
     elevationDIV: "#profile",
-    height: 200
+    height: 300,
+    downloadLink: 'link',
+
+    
 
 }).addTo(map);
 
@@ -170,3 +173,36 @@ gpxTrack.on("addline", function(evt) {
 
     elevationControl.addData(evt.line);
 });
+
+
+  const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Path-Classification',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+  };
+ 
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+
+
