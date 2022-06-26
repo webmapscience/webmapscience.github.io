@@ -174,7 +174,7 @@ gpxTrack.on("addline", function(evt) {
     elevationControl.addData(evt.line);
 });
 
-
+//Chart.js Pie Chart einbauen
   const labels = [
     'Primary Street',
     'Secondary Street',
@@ -186,17 +186,20 @@ gpxTrack.on("addline", function(evt) {
 
   const data = {
     labels: labels,
-    height: 300,
+   
+    
     datasets: [{
       label: 'Path-Classification',
       backgroundColor: 'white',
       borderColor: 'black',
       data: [0, 10, 5, 2, 20, 30, 35],
+      height: "300",
     }]
   };
 
   const config = {
     type: 'doughnut',
+ 
     data: data,
   };
  
