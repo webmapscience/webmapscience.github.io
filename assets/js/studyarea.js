@@ -176,21 +176,22 @@ gpxTrack.on("addline", function(evt) {
 
 
   const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
+    'Primary Street',
+    'Secondary Street',
+    'Living Street',
+    'Footway',
+    'Path',
+    'AlpinePath',
   ];
 
   const data = {
     labels: labels,
+    height: 300,
     datasets: [{
       label: 'Path-Classification',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
+      backgroundColor: 'white',
+      borderColor: 'black',
+      data: [0, 10, 5, 2, 20, 30, 35],
     }]
   };
 
