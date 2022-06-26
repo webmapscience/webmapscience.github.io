@@ -16,7 +16,7 @@
          padding: 20px;
          overflow-x: hidden;
          overflow-y: hidden;
-         background-color: gray;
+         background-color: white;
          border-right: 4px solid #eee;
          background: black;
 
@@ -39,6 +39,7 @@
  }
  .main .page-header {
      margin-top: 0;
+     color: #eee;
      background: black;
  }
  
@@ -54,7 +55,7 @@
  
  .viewing {
    
-     background: black;
+     background: rgba(91, 88, 88, 0.317);
  }
  
  section {
