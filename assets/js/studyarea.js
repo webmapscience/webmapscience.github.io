@@ -64,7 +64,18 @@ let layerControl = L.control.layers({
     "GPX Track der Etappe": overlays.gpx,
 }).addTo(map);
 
-// Maßstab control
+/*L.LayerGroup.EnvironmentalLayers({
+    // simpleLayerControl: true,
+    addLayersToMap: true,
+    include: ['odorreport', 'clouds', 'eonetFiresLayer', 'Unearthing', 'PLpeople'], // display only these layers
+    // exclude: ['mapknitter', 'clouds'], // layers to exclude (cannot be used at same time as 'include'
+    // display: ['eonetFiresLayer'], // which layers are actually shown as opposed to just being in the menu
+    hash: true,
+    embed: true,
+    // hostname: 'domain name goes here'
+  }).addTo(map);*/
+
+// Maßstab hinzu
 L.control.scale({
     imperial: false
 }).addTo(map);
@@ -82,8 +93,6 @@ let miniMap = new L.Control.MiniMap(
 
 // GPX Track Layer beim Laden anzeigen
 overlays.gpx.addTo(map);
-
-
 
 // GPX Track Layer implementieren
 let gpxTrack = new L.GPX("./data/route_1.gpx", {
@@ -121,8 +130,8 @@ let popup = `
     <li>Höchster Punkt: ${gpxLayer.get_elevation_max().toFixed()} m. ü. NN.</li>
     <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min().toFixed()} m. ü. NN.</li>
     <br>
-    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter Bergauf</li>
-    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter Bergab</li>
+    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter </li>
+    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter </li>
 
 </ul>
 `;
@@ -151,7 +160,10 @@ let elevationControl = L.control.elevation({
     time:false,
     theme: "trekking",
     elevationDIV: "#profile",
-    height: 200
+    height: 300,
+    downloadLink: 'link',
+
+    
 
 }).addTo(map);
 
@@ -161,3 +173,40 @@ gpxTrack.on("addline", function(evt) {
 
     elevationControl.addData(evt.line);
 });
+
+//Chart.js Pie Chart einbauen
+  const labels = [
+    'Primary Street',
+    'Secondary Street',
+    'Living Street',
+    'Footway',
+    'Path',
+    'AlpinePath',
+  ];
+
+  const data = {
+    labels: labels,
+   
+    
+    datasets: [{
+      label: 'Path-Classification',
+      backgroundColor: 'white',
+      borderColor: 'black',
+      data: [0, 10, 5, 2, 20, 30, 35],
+      height: "300",
+    }]
+  };
+
+  const config = {
+    type: 'doughnut',
+ 
+    data: data,
+  };
+ 
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+
+
