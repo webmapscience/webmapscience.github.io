@@ -1,7 +1,7 @@
 let hintereisferner = {
-    lat: 46.79836,
-    lng: 10.76857,
-    zoom: 14
+    lat: 46.80054779339542,
+    lng: 10.75644886803035,
+    zoom: 14.49
 };
 
 // WMTS Hintergrundlayer der eGrundkarte Tirol definieren
@@ -43,12 +43,12 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "Sommer": eGrundkarteTirol.sommer,
+    "Summer": eGrundkarteTirol.sommer,
     "Winter": eGrundkarteTirol.winter,
-    "Orthofoto": eGrundkarteTirol.ortho,
-    "Oberfächenmodel": L.tileLayer.provider("BasemapAT.surface"),
-    "Geländemodel": L.tileLayer.provider("BasemapAT.terrain"),
-    "Orthofoto mit Beschriftung": L.layerGroup([
+    "Satellite": eGrundkarteTirol.ortho,
+    "Surface": L.tileLayer.provider("BasemapAT.surface"),
+    "Terrain": L.tileLayer.provider("BasemapAT.terrain"),
+    "Satellite with names": L.layerGroup([
         eGrundkarteTirol.ortho,
         eGrundkarteTirol.nomenklatur,
     ])
@@ -82,10 +82,10 @@ async function loadPoly(url, name) {
         }
     }).addTo(overlay);
 }
-loadPoly("data/20160929_RF.geojson", "Gletscherstand 2016");
-loadPoly("data/20170822_RF.geojson", "Gletscherstand 2017");
-loadPoly("data/20180731_RF.geojson", "Gletscherstand 2018");
-loadPoly("data/20190914_RF.geojson", "Gletscherstand 2019");
+loadPoly("data/20160929_RF.geojson", "2016 - 09");
+loadPoly("data/20170822_RF.geojson", "2017 - 08");
+loadPoly("data/20180731_RF.geojson", "2018 - 10");
+loadPoly("data/20190914_RF.geojson", "2019 - 09");
 
 // TODO: Legende
 var legend = L.control({ position: "bottomleft" });
