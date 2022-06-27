@@ -51,17 +51,17 @@ let map = L.map("map", {
 
 // Layer control mit WMTS Hintergründen und Overlay
 let layerControl = L.control.layers({
-    "Sommer": startLayer,
-    "Winter": eGrundkarteTirol.winter,
-    "Orthofoto": eGrundkarteTirol.ortho,
-    "Oberfächenmodel": L.tileLayer.provider("BasemapAT.surface"),
-    "Geländemodel": L.tileLayer.provider("BasemapAT.terrain"),
-    "Orthofoto mit Beschriftung": L.layerGroup([
+    "summer": startLayer,
+    "winter": eGrundkarteTirol.winter,
+    "orthophoto": eGrundkarteTirol.ortho,
+    "surface": L.tileLayer.provider("BasemapAT.surface"),
+    "terrain": L.tileLayer.provider("BasemapAT.terrain"),
+    "orthophoto with names": L.layerGroup([
         eGrundkarteTirol.ortho,
         eGrundkarteTirol.nomenklatur,
     ])
 }, {
-    "GPX Track der Etappe": overlays.gpx,
+    "Trekking-route": overlays.gpx,
 }).addTo(map);
 
 /*L.LayerGroup.EnvironmentalLayers({
@@ -122,16 +122,17 @@ map.fitBounds(gpxLayer.getBounds());
 
 
 let popup = `
-<h1> Aussichtsstandort mit aktuellem Webcam-Foto am Zielort: </h1>
+<h1> Live-Webcam of Hintereisferner: </h1>
 <ul>
 <img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" href="https://www.foto-webcam.eu/webcam/hintereisferner1/" style="width:170px; border:2px solid silver;" alt="Webcam">
-    <h3> Trekkingroute Hard-Facts: </h3>
-    <li>Streckenlänge ${gpxLayer.get_distance().toFixed()/1000} Kilometer </li>
-    <li>Höchster Punkt: ${gpxLayer.get_elevation_max().toFixed()} m. ü. NN.</li>
-    <li>Niedrigster Punkt: ${gpxLayer.get_elevation_min().toFixed()} m. ü. NN.</li>
     <br>
-    <li>Höhenmeter Bergauf: ${gpxLayer.get_elevation_gain().toFixed()} Höhenmeter </li>
-    <li>Höhenmeter Bergab: ${gpxLayer.get_elevation_loss().toFixed()} Höhenmeter </li>
+    <h2> Trekkingroute Hard-Facts: </h2>
+    <li>Distance: ${gpxLayer.get_distance().toFixed()/1000} Kilometers </li>
+    <li>Highest Point: ${gpxLayer.get_elevation_max().toFixed()} m. a. Z.</li>
+    <li>Lowest Point: ${gpxLayer.get_elevation_min().toFixed()} m. a. Z.</li>
+    <br>
+    <li>Meters Uphill: ${gpxLayer.get_elevation_gain().toFixed()} Meters </li>
+    <li>Meters Downhill: ${gpxLayer.get_elevation_loss().toFixed()} Meters </li>
 
 </ul>
 `;
