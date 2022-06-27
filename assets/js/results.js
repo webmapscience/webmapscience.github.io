@@ -82,10 +82,10 @@ async function loadPoly(url, name) {
         }
     }).addTo(overlay);
 }
-loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2016");
-loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2017");
-loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2018");
-loadPoly("data/prediction_RF_01.geojson", "Gletscherstand 2019");
+loadPoly("data/20160929_RF.geojson", "Gletscherstand 2016");
+loadPoly("data/20170822_RF.geojson", "Gletscherstand 2017");
+loadPoly("data/20180731_RF.geojson", "Gletscherstand 2018");
+loadPoly("data/20190914_RF.geojson", "Gletscherstand 2019");
 
 // TODO: Legende
 var legend = L.control({ position: "bottomleft" });
