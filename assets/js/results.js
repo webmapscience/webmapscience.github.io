@@ -92,8 +92,8 @@ var legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend");
-  div.innerHTML += '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Ice</span><br>';
-  div.innerHTML += '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Snow</span><br>';
+  div.innerHTML += '<i class="icon" style="background-image: url(icons\ice_legend.png);background-repeat: no-repeat;"></i><span>Ice</span><br>';
+  div.innerHTML += '<i class="icon" style="background-image: url(icons\snow_legend.png);background-repeat: no-repeat;"></i><span>Snow</span><br>';
 
   
 
