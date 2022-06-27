@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "prediction_RF",
+"name": "20180731_RF",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "Id": 3, "gridcode": 0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 10.760975744636278, 46.814715776140325 ], [ 10.761106764851981, 46.814713759681524 ], [ 10.761037492837907, 46.814599564644858 ], [ 10.760975744636278, 46.814715776140325 ] ] ] ] } },
