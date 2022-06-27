@@ -12,6 +12,14 @@ a {
     
 }
 
+.container {
+    width: 600px;
+ } 
+ 
+ .content{
+   width: 100%
+ }
+
 main {
     max-width: 1200px;
     margin: auto;
