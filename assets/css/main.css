@@ -40,7 +40,7 @@ html {
 body {
     margin: 0;
     padding: 0;
- }
+}
 
 
 article,
@@ -62,7 +62,7 @@ summary {
 .center {
     display: block;
     justify-content: center;
-    
+
 }
 
 audio,

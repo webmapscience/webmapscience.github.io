@@ -73,11 +73,17 @@ async function loadPoly(url, name) {
     overlay.addTo(map);
 
     L.geoJSON(geojson, {
-        style: function(feature) {
+        style: function (feature) {
             console.log(feature.properties.gridcode);
             switch (feature.properties.gridcode) {
-                case 0: return {color: "#001f3f"};
-                case 1: return {color: "#0074D9"};
+                case 0:
+                    return {
+                        color: "#001f3f"
+                    };
+                case 1:
+                    return {
+                        color: "#0074D9"
+                    };
             }
         }
     }).addTo(overlay);
@@ -88,16 +94,18 @@ loadPoly("data/20180731_RF.geojson", "2018 - 10");
 loadPoly("data/20190914_RF.geojson", "2019 - 09");
 
 // TODO: Legende
-var legend = L.control({ position: "bottomleft" });
+var legend = L.control({
+    position: "bottomleft"
+});
 
-legend.onAdd = function(map) {
-  var div = L.DomUtil.create("div", "legend");
-  div.innerHTML += '<i class="icon" style="background-image: url(https://github.com/webmapscience/webmapscience.github.io/blob/main/icons/ice_legend.png?raw=true);background-repeat: no-repeat;"></i><span>Ice</span><br>';
-  div.innerHTML += '<i class="icon" style="background-image: url(https://github.com/webmapscience/webmapscience.github.io/blob/main/icons/snow_legend.png?raw=true);background-repeat: no-repeat;"></i><span>Snow</span><br>';
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create("div", "legend");
+    div.innerHTML += '<i class="icon" style="background-image: url(https://github.com/webmapscience/webmapscience.github.io/blob/main/icons/ice_legend.png?raw=true);background-repeat: no-repeat;"></i><span>Ice</span><br>';
+    div.innerHTML += '<i class="icon" style="background-image: url(https://github.com/webmapscience/webmapscience.github.io/blob/main/icons/snow_legend.png?raw=true);background-repeat: no-repeat;"></i><span>Snow</span><br>';
 
-  
 
-  return div;
+
+    return div;
 };
 
 legend.addTo(map);
