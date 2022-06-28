@@ -64,16 +64,6 @@ let layerControl = L.control.layers({
     "Trekking-route": overlays.gpx,
 }).addTo(map);
 
-/*L.LayerGroup.EnvironmentalLayers({
-    // simpleLayerControl: true,
-    addLayersToMap: true,
-    include: ['odorreport', 'clouds', 'eonetFiresLayer', 'Unearthing', 'PLpeople'], // display only these layers
-    // exclude: ['mapknitter', 'clouds'], // layers to exclude (cannot be used at same time as 'include'
-    // display: ['eonetFiresLayer'], // which layers are actually shown as opposed to just being in the menu
-    hash: true,
-    embed: true,
-    // hostname: 'domain name goes here'
-  }).addTo(map);*/
 
 // Maßstab hinzu
 L.control.scale({
@@ -177,31 +167,37 @@ gpxTrack.on("addline", function (evt) {
     elevationControl.addData(evt.line);
 });
 
+
 //Chart.js Pie Chart einbauen
-const labels = [
-    te,
-];
+  const labels = [
+    'Primary Street',
+    'Secondary Street',
+    'Living Street',
+    'Footway',
+    'Path',
+    'AlpinePath',
+  ];
 
-const data = {
+  const data = {
     labels: labels,
-
-
+   
+    
     datasets: [{
-        label: 'Path-Classification',
-        backgroundColor: 'white',
-        borderColor: 'black',
-        data: [0, 10, 5, 2, 20, 30, 35],
-        height: "300",
+      label: 'Path-Classification',
+      backgroundColor: 'white',
+      borderColor: 'black',
+      data: [0, 10, 5, 2, 20, 30, 35],
+      height: "300",
     }]
-};
+  };
 
-const config = {
+  const config = {
     type: 'doughnut',
-
+ 
     data: data,
-};
-
-const myChart = new Chart(
+  };
+ 
+  const myChart = new Chart(
     document.getElementById('myChart'),
     config
-);
+  );
