@@ -96,32 +96,32 @@ overlays.gpx.addTo(map);
 
 // GPX Track Layer implementieren
 let gpxTrack = new L.GPX("./data/route_1.gpx", {
-async: true,
-marker_options:{
-    startIconUrl:'icons/start.png',
-    endIconUrl:'icons/mountain.png',
-    shadowUrl: null,
-    iconSize: [32, 37],
-    iconAnchor: [16, 37],
-},
-polyline_options:{
-    color:"black",
-    dashArray:[5,4],
-}
+    async: true,
+    marker_options: {
+        startIconUrl: 'icons/start.png',
+        endIconUrl: 'icons/mountain.png',
+        shadowUrl: null,
+        iconSize: [32, 37],
+        iconAnchor: [16, 37],
+    },
+    polyline_options: {
+        color: "black",
+        dashArray: [5, 4],
+    }
 
 }).addTo(overlays.gpx);
 
-gpxTrack.on("loaded", function (evt){
+gpxTrack.on("loaded", function (evt) {
     //console.log ("loaded gpx event: ", evt);
     map.fitBounds(evt.target.getBounds())
 
 
-let gpxLayer = evt.target;
-map.fitBounds(gpxLayer.getBounds());
+    let gpxLayer = evt.target;
+    map.fitBounds(gpxLayer.getBounds());
 
 
 
-let popup = `
+    let popup = `
 <h1> Live-Webcam of Hintereisferner: </h1>
 <ul>
 <img src="https://www.foto-webcam.eu/webcam/hintereisferner1/current/180.jpg" href="https://www.foto-webcam.eu/webcam/hintereisferner1/" style="width:170px; border:2px solid silver;" alt="Webcam">
@@ -137,77 +137,71 @@ let popup = `
 </ul>
 `;
 
-// Print
-L.control.bigImage({position: 'bottomleft'}).addTo(map);
+    // Print
+    L.control.bigImage({
+        position: 'bottomleft'
+    }).addTo(map);
 
 
 
-// Rainviewer
-L.control.rainviewer({
-    position: 'topleft',
-    nextButtonText: '>',
-    playStopButtonText: 'Play/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Hour:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-}).addTo(map);
+    // Rainviewer
+    L.control.rainviewer({
+        position: 'topleft',
+        nextButtonText: '>',
+        playStopButtonText: 'Play/Stop',
+        prevButtonText: '<',
+        positionSliderLabelText: "Hour:",
+        opacitySliderLabelText: "Opacity:",
+        animationInterval: 500,
+        opacity: 0.5
+    }).addTo(map);
 
-gpxLayer.bindPopup(popup);
+    gpxLayer.bindPopup(popup);
 });
 
 let elevationControl = L.control.elevation({
-    time:false,
+    time: false,
     theme: "trekking",
     elevationDIV: "#profile",
     height: 300,
     downloadLink: 'link',
 
-    
+
 
 }).addTo(map);
 
 
 
-gpxTrack.on("addline", function(evt) {
+gpxTrack.on("addline", function (evt) {
 
     elevationControl.addData(evt.line);
 });
 
 //Chart.js Pie Chart einbauen
-  const labels = [
-    'Primary Street',
-    'Secondary Street',
-    'Living Street',
-    'Footway',
-    'Path',
-    'AlpinePath',
-  ];
+const labels = [
+    te,
+];
 
-  const data = {
+const data = {
     labels: labels,
-   
-    
-    datasets: [{
-      label: 'Path-Classification',
-      backgroundColor: 'white',
-      borderColor: 'black',
-      data: [0, 10, 5, 2, 20, 30, 35],
-      height: "300",
-    }]
-  };
 
-  const config = {
+
+    datasets: [{
+        label: 'Path-Classification',
+        backgroundColor: 'white',
+        borderColor: 'black',
+        data: [0, 10, 5, 2, 20, 30, 35],
+        height: "300",
+    }]
+};
+
+const config = {
     type: 'doughnut',
- 
+
     data: data,
-  };
- 
-  const myChart = new Chart(
+};
+
+const myChart = new Chart(
     document.getElementById('myChart'),
     config
-  );
-
-
-
+);
