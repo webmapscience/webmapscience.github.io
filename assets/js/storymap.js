@@ -2,14 +2,14 @@
     'use strict';
 
 
-    $.fn.storymap = function(options) {
+    $.fn.storymap = function (options) {
 
         var defaults = {
             selector: '[data-place]',
             breakpointPos: '33.333%',
             createMap: function () {
                 // create a map in the "map" div, set the view to a given place and zoom
-                var map = L.map('map').setView([47.27001,11.39024,], 11);
+                var map = L.map('map').setView([47.27001, 11.39024, ], 11);
 
                 // add an OpenStreetMap tile layer
                 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -23,10 +23,10 @@
         var settings = $.extend(defaults, options);
 
 
-        if (typeof(L) === 'undefined') {
+        if (typeof (L) === 'undefined') {
             throw new Error('Storymap requires Leaflet');
         }
-        if (typeof(_) === 'undefined') {
+        if (typeof (_) === 'undefined') {
             throw new Error('Storymap requires underscore.js');
         }
 
@@ -50,7 +50,10 @@
 
             var distances = _.map(paragraphs, function (element) {
                 var dist = getDistanceToTop(element, top);
-                return {el: $(element), distance: dist};
+                return {
+                    el: $(element),
+                    distance: dist
+                };
             });
 
             var closest = _.min(distances, function (dist) {

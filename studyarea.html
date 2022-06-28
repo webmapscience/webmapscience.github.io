@@ -45,29 +45,33 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-<!-- leaflet-elevation -->
-<link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
-<script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
+    <!-- leaflet-elevation -->
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
+    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
 
-<!-- Mini-Map Plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js" integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Mini-Map Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"
+        integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css" integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"
+        integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
- <!--Leaflet rainviewer plugin-->
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css" />
- <script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
+    <!--Leaflet rainviewer plugin-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
 
- <!-- Leaflet Print Map Plugin -->
- <link rel="stylesheet" href="assets/css/Leaflet.BigImage.min.css">
- <script src="assets/js/Leaflet.BigImage.min.js"></script>
+    <!-- Leaflet Print Map Plugin -->
+    <link rel="stylesheet" href="assets/css/Leaflet.BigImage.min.css">
+    <script src="assets/js/Leaflet.BigImage.min.js"></script>
 
- <!--Chart.js einbinden-->
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--Chart.js einbinden-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
- <!-- Leaflet Routing to Adress Plugin -->
- <link rel="stylesheet" href="assets/css/LeafletControlRoutingtoaddress.css" />
- <script src="assets/js/LeafletControlRoutingtoaddress.js"></script>
+    <!-- Leaflet Routing to Adress Plugin -->
+    <link rel="stylesheet" href="assets/css/LeafletControlRoutingtoaddress.css" />
+    <script src="assets/js/LeafletControlRoutingtoaddress.js"></script>
 
 
 </head>
@@ -87,9 +91,10 @@
             <br>
             <div id="map">
             </div>
-            <h3>Map includes live webcam, rainradar, printing-options and route-recommendation wiht routefacts and elevationprofile.</h3>
+            <h3>Map includes live webcam, rainradar, printing-options and route-recommendation wiht routefacts and
+                elevationprofile.</h3>
 
-           
+
             <div id="profile"></div>
 
             <h3>Open Results-PopUp-Map</h3>
@@ -98,23 +103,53 @@
 
             <h2>Way-Category-Chart</h2>
             <div class="container">
-                <canvas id="myChart" width="device-width" > </canvas>
+                <canvas id="myChart" width="device-width"> </canvas>
             </div>
 
             <h2>About studyarea:</h2>
             <img src="images/Climate_HEF.jpg">
-                <br>
-                <p>The study area is situated in the upper Rofental which is part of the Ötztal. Hintereisferner (HEF) is a typical valley glacier located on the northern side of the Austrian alps main ridge and part of the Ötztaler Ache river catchment. HEF is the main source of the Rofenache which is the headstream of the Ötztaler Ache (Gattermayer 2013: 110). </p>
-                <p>The Ötztaler Ache drains into the Inn and is important for its water supply, especially in the summer months, when it releases water stored as snow and ice. The main glacier spreads from high elevation accumulation areas below the summit of Weißkugel (3739 m) through the valley in the north-eastern direction. The glacier covers an area of 6,39 km2 at a length of 6,5 km with an elevation ranging from 3720 m a.s.l to 2505 m a.s.l. at the end of the tongue in 2018 and is one of the biggest glaciers of Tyrol. In the hydrological year of 2017/18, the Equilibrium-line Altitude (ELA) of HEF was identified at 3500 m a.s.l. (Kaser & Juen 2018: B1).	<p>
-                    Today, the actual HEF area contains three different smaller glaciers that have been separated in the last decades. The situation today is shown in Figure 3. In this case study, Hintereisferner, Langtauferer Jochferner, and Stationsferner are treated as one glacier and named “Hintereisferner” (HEF). In 2018, Hintereisferner had an extent of 5 km2, Stationsferner 0,25 km2 and Langtauferer Jochferner 1 km2 (Klug 2019).</p>
-                    <p>
-                    The upper Ötztal including the Rofental is a so-called inner alpine dry valley. The distance to the fringe of the alps and shadowing caused by high mountains affect the precipitation that is low in the valley and increases with rising altitude (Kuhn et al. 1982).</p> <p>There are two meteorological research stations close to HEF. Vent, a village about 8 km west of the end of the glacier, and Hintereis Research Station, which is located on the opposite side of the Laser Scanner above the glaciers orographic left side, deliver data since 1905 (Vent) and Hintereis (1952) (Juen et al. 2017 a, b). Vent is situated in the valley at an elevation of 1895 m a.s.l. and has an average annual precipitation of 677 mm a-1 and an average air temperature of 1.5°C (1906-2011). </p><p>The rain gauge at Hintereis is located at an elevation of 3026 m a.s.l. and has about twice the amount of precipitation compared to Vent (Klug et al. 2018: 834). The precipitation increases with rising elevation because of orographic effects caused by the terrain as displayed in figure 2 (Fischer & Hartl 2013: 39).
+            <br>
+            <p>The study area is situated in the upper Rofental which is part of the Ötztal. Hintereisferner (HEF) is a
+                typical valley glacier located on the northern side of the Austrian alps main ridge and part of the
+                Ötztaler Ache river catchment. HEF is the main source of the Rofenache which is the headstream of the
+                Ötztaler Ache (Gattermayer 2013: 110). </p>
+            <p>The Ötztaler Ache drains into the Inn and is important for its water supply, especially in the summer
+                months, when it releases water stored as snow and ice. The main glacier spreads from high elevation
+                accumulation areas below the summit of Weißkugel (3739 m) through the valley in the north-eastern
+                direction. The glacier covers an area of 6,39 km2 at a length of 6,5 km with an elevation ranging from
+                3720 m a.s.l to 2505 m a.s.l. at the end of the tongue in 2018 and is one of the biggest glaciers of
+                Tyrol. In the hydrological year of 2017/18, the Equilibrium-line Altitude (ELA) of HEF was identified at
+                3500 m a.s.l. (Kaser & Juen 2018: B1). <p>
+                    Today, the actual HEF area contains three different smaller glaciers that have been separated in the
+                    last decades. The situation today is shown in Figure 3. In this case study, Hintereisferner,
+                    Langtauferer Jochferner, and Stationsferner are treated as one glacier and named “Hintereisferner”
+                    (HEF). In 2018, Hintereisferner had an extent of 5 km2, Stationsferner 0,25 km2 and Langtauferer
+                    Jochferner 1 km2 (Klug 2019).</p>
+                <p>
+                    The upper Ötztal including the Rofental is a so-called inner alpine dry valley. The distance to the
+                    fringe of the alps and shadowing caused by high mountains affect the precipitation that is low in
+                    the valley and increases with rising altitude (Kuhn et al. 1982).</p>
+                <p>There are two meteorological research stations close to HEF. Vent, a village about 8 km west of the
+                    end of the glacier, and Hintereis Research Station, which is located on the opposite side of the
+                    Laser Scanner above the glaciers orographic left side, deliver data since 1905 (Vent) and Hintereis
+                    (1952) (Juen et al. 2017 a, b). Vent is situated in the valley at an elevation of 1895 m a.s.l. and
+                    has an average annual precipitation of 677 mm a-1 and an average air temperature of 1.5°C
+                    (1906-2011). </p>
+                <p>The rain gauge at Hintereis is located at an elevation of 3026 m a.s.l. and has about twice the
+                    amount of precipitation compared to Vent (Klug et al. 2018: 834). The precipitation increases with
+                    rising elevation because of orographic effects caused by the terrain as displayed in figure 2
+                    (Fischer & Hartl 2013: 39).
                 </p>
         </article>
         <footer>
             <strong>Made by WebmapScience, 2022</strong>
+
             <nav>
-                
+                <a class="back" href="https://webmapscience.github.io/"><i
+                        class="fa-solid fa-arrow-left-long"></i>Landing Page</a>
+
+
+
             </nav>
         </footer>
     </main>
