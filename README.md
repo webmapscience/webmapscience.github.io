@@ -1,9 +1,5 @@
-# Gletschermapping - kurzweilige (virtuelle) Tour durchs ewige Eis 
+# Cryospheremapping - virtual Tour
 
-///  // / IM AUFBAU / //  ///
-
-
-Ziel der Arbeit:
 
 Anhand von einer Website werden Informationen über den Hintereisferner anschaulich publiziert. Ziel ist eine Darstellung von klassifizierten Oberflächen, die mittels Machine Learning Algorithmen erstellt wurden. Die Ergebnisse sollen entsprechend publiziert werden, sodass sie auch von Personen ohne fachliches Wissen zu erschließen sind.	
 
