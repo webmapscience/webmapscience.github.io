@@ -13,7 +13,7 @@
 
                 // add an OpenStreetMap tile layer
                 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                    attribution: 'Sussbauer/Wagner <a href="https://webmapscience.github.io">WebmapScience</a>, &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+                    attribution: 'RS/Wagner <a href="https://webmapscience.github.io">WebmapScience</a>, &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
                 }).addTo(map);
 
                 return map;
